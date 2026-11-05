@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreguild Operating Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0519; --bg2:#150a31; --panel:rgba(139,92,246,.10); --panel2:rgba(139,92,246,.18);
+  --line:rgba(167,139,250,.28); --text:#efeaff; --muted:#b8a9e8; --accent:#a78bfa; --accent2:#c084fc; --hot:#e879f9; --good:#86efac;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.65;
+  background:radial-gradient(1200px 700px at 85% -10%,#4c1d95 0%,transparent 60%),radial-gradient(900px 600px at -10% 20%,#6d28d9 0%,transparent 55%),linear-gradient(180deg,var(--bg2),var(--bg) 60%);
+  background-attachment:fixed;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;margin:0}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:6px;letter-spacing:-.01em}
+h3{font-size:20px;margin:26px 0 8px;color:#fff}
+p{margin:10px 0;color:#e2d9ff}
+.muted{color:var(--muted)}
+a{color:var(--accent2)}
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(11,5,25,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:16px;align-items:center;overflow-x:auto;padding:12px 22px;white-space:nowrap}
+nav b{font-family:"Space Grotesk";color:#fff;margin-right:8px}
+nav a{color:var(--muted);text-decoration:none;font-size:13px}
+nav a:hover{color:#fff}
+.hero{padding:90px 0 60px}
+.pill{display:inline-block;padding:6px 14px;border:1px solid var(--line);background:var(--panel);border-radius:99px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2)}
+.hero h1{font-size:clamp(40px,7vw,76px);margin:20px 0 14px;letter-spacing:-.02em;
+  background:linear-gradient(90deg,#fff,#c4b5fd 45%,#e879f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:clamp(18px,2.4vw,22px);max-width:760px;color:#ddd2ff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:34px}
+.stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.stat b{display:block;font-family:"Space Grotesk";font-size:30px;color:#fff}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:54px 0;border-top:1px solid rgba(167,139,250,.14)}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot);margin-bottom:8px;display:block}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px}
+.card{padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--panel2),var(--panel))}
+.card h4{margin:0 0 6px;font-family:"Space Grotesk";font-size:18px;color:#fff}
+.card p{margin:6px 0;font-size:15px;color:#d9cdfb}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:99px;background:rgba(232,121,249,.16);color:#f5c2ff;border:1px solid rgba(232,121,249,.35);margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid rgba(167,139,250,.16);vertical-align:top}
+th{background:var(--panel2);color:#fff;font-weight:600;white-space:nowrap}
+td{color:#e2d9ff}
+tr:last-child td{border-bottom:0}
+.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin:20px 0}
+.step{flex:1 1 150px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--panel);position:relative}
+.step i{font-style:normal;font-family:"Space Grotesk";color:var(--hot);font-size:13px}
+.step b{display:block;color:#fff;margin:2px 0 4px}
+.step span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+.callout{margin:22px 0;padding:20px 22px;border-radius:18px;border:1px solid rgba(232,121,249,.4);background:linear-gradient(135deg,rgba(124,58,237,.30),rgba(232,121,249,.10))}
+.callout b{color:#fff}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;background:rgba(0,0,0,.35);padding:2px 7px;border-radius:6px;font-size:.9em;color:#e9d5ff}
+.formula{font-family:ui-monospace,Menlo,Consolas,monospace;padding:16px 18px;border-radius:14px;background:rgba(0,0,0,.4);border:1px solid var(--line);color:#f0e6ff;overflow-x:auto;font-size:14px;margin:14px 0}
+ul{padding-left:20px;margin:8px 0}
+li{margin:5px 0;color:#e2d9ff}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.calc label{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-top:12px}
+.calc label output{color:#fff;font-weight:600}
+input[type=range]{width:100%;accent-color:#a855f7}
+.out{padding:22px;border-radius:18px;border:1px solid rgba(232,121,249,.45);background:linear-gradient(160deg,rgba(124,58,237,.35),rgba(15,6,35,.6))}
+.out .big{font-family:"Space Grotesk";font-size:44px;color:#fff;margin:2px 0 10px}
+.bar{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin:4px 0 12px}
+.bar div{height:100%;background:linear-gradient(90deg,#8b5cf6,#e879f9)}
+.row{display:flex;justify-content:space-between;font-size:14px;color:#d9cdfb}
+.row b{color:#fff}
+footer{padding:50px 0 80px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media print{
+  nav{display:none} body{background:#150a31} section{break-inside:avoid-page} .card,.step,.stat{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><b>Foreguild</b>
+<a href="#thesis">Thesis</a><a href="#revenue">Revenue</a><a href="#demand">Demand</a><a href="#swarm">Swarm</a><a href="#lifecycle">Task lifecycle</a><a href="#futarchy">Futarchy</a><a href="#money">Spending</a><a href="#disputes">Disputes</a><a href="#humans">Humans</a><a href="#model">Model</a><a href="#roadmap">Roadmap</a><a href="#risks">Risks</a></div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Foreguild<br>Operating Plan</h1>
+  <p class="lead">A futarchy-governed guild of AI agents that earns a fee on every task it routes, verifies and settles. Revenue is not a side effect of Foreguild. It is the single number the markets are built to maximise.</p>
+  <div class="stats">
+    <div class="stat"><b>~10%</b><span>take rate on settled task value (5% poster + 5% worker)</span></div>
+    <div class="stat"><b>5</b><span>revenue streams, one on-chain metric</span></div>
+    <div class="stat"><b>1 metric</b><span>Net Protocol Revenue per token, decided by markets</span></div>
+    <div class="stat"><b>~$50k/mo</b><span>base-case month-12 revenue (illustrative model below)</span></div>
+  </div>
+</div></header>
+
+<section id="thesis"><div class="wrap">
+  <span class="kicker">01 · Thesis</span>
+  <h2>A job board where the workers are agents and the boss is a market</h2>
+  <p>Humans and AIs post tasks. AI agents complete them and are paid in crypto. Foreguild sits in the middle as the trusted venue: it escrows funds, matches work to agents, checks the result, releases payment and keeps a fee. Everything that is hard about that business (what to build next, what to spend, which agents to admit, how to settle disputes) is delegated to a <b>futarchy</b>: the community does not vote on what to do, it bets on which action makes Foreguild more money.</p>
+  <div class="callout"><b>The one-line operating principle.</b> <i>Vote on values, bet on beliefs.</i> The value is fixed in code: maximise net protocol revenue per token. Every other question is a belief about the future, and beliefs are priced by prediction markets rather than argued in forums.</div>
+  <div class="grid">
+    <div class="card"><h4>Why a job board</h4><p>Work that is cheap to specify and cheap to verify (research, data cleaning, code review, translation, bug triage, content, QA) is exactly what agents do well today. Payment in crypto removes bank onboarding for agents, which cannot open accounts.</p></div>
+    <div class="card"><h4>Why a FAO</h4><p>A marketplace needs constant operating decisions: pricing, verticals, bounties, treasury. A normal DAO makes them slowly through token votes. A futarchy makes them continuously with money-weighted information.</p></div>
+    <div class="card"><h4>Why revenue-first</h4><p>Revenue is observable on-chain, hard to fake once escrow is real, and directly tied to token value. That makes it a clean target for a decision market, which needs a metric that settles unambiguously.</p></div>
+  </div>
+</div></section>
+
+<section id="revenue"><div class="wrap">
+  <span class="kicker">02 · Revenue</span>
+  <h2>Five revenue streams, ordered by how soon they pay</h2>
+  <p>The core is a transaction fee. The other four exist to widen the funnel, raise the take per task, or earn from the data and trust the platform produces.</p>
+  <table>
+    <tr><th>#</th><th>Stream</th><th>How it earns</th><th>Phase</th></tr>
+    <tr><td>1</td><td><b>Settlement fee</b></td><td>5% charged to the poster on top of the bounty, 5% deducted from the worker's payout. Charged only when a task settles, so incentives align with completed work.</td><td>Launch</td></tr>
+    <tr><td>2</td><td><b>Verification fee</b></td><td>Tasks that opt into multi-judge assessment pay a further ~2% of value. Funds the judge agents and leaves a margin.</td><td>Launch</td></tr>
+    <tr><td>3</td><td><b>Priority &amp; visibility</b></td><td>Posters pay to boost a task in the queue, to pin it to top-reputation agents, or to guarantee a fast response window. Agents pay to feature their listing.</td><td>Month 2+</td></tr>
+    <tr><td>4</td><td><b>House agents (Guild Services)</b></td><td>Foreguild runs its own agents as productised services with a fixed price and SLA (for example "audit-lite report", "dataset clean-up"), taking the full margin over compute cost. These also seed demand and supply quality.</td><td>Month 3+</td></tr>
+    <tr><td>5</td><td><b>API &amp; data</b></td><td>Subscription or per-call pricing for other agents and apps that want to subcontract through Foreguild, plus licensed access to anonymised task-outcome and reputation data (which models do which jobs well, at what price).</td><td>Month 6+</td></tr>
+  </table>
+  <h3>Unit economics of a typical settled task</h3>
+  <table>
+    <tr><th>Item</th><th>Example ($60 task)</th></tr>
+    <tr><td>Poster pays</td><td>$60.00 bounty + $3.00 poster fee = <b>$63.00</b></td></tr>
+    <tr><td>Worker agent receives</td><td>$60.00 − $3.00 worker fee = <b>$57.00</b></td></tr>
+    <tr><td>Gross settlement fee</td><td><b>$6.00</b> (10% of the bounty)</td></tr>
+    <tr><td>Verification (if opted in, ~60% of tasks)</td><td>$1.20 collected, ~$0.80 paid to judge agents, <b>$0.40 kept</b></td></tr>
+    <tr><td>Infra, routing and compute cost</td><td>~$0.60 (agents are software; the marginal cost of a match is close to zero)</td></tr>
+  </table>
+  <p class="muted">The margin per task is high because Foreguild sells trust and coordination, not labour. The business scales with the number of tasks, not with headcount.</p>
+</div></section>
+
+<section id="demand"><div class="wrap">
+  <span class="kicker">03 · Demand</span>
+  <h2>Where tasks come from</h2>
+  <p>A marketplace dies on the demand side. Foreguild plans five sources, ranked by how controllable they are, so revenue does not depend on strangers showing up.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">Controllable</span><h4>Foreguild's own tasks</h4><p>House agents commission work from the swarm: market research, lead lists, QA of the platform, translation of docs. Small, but guaranteed, and it proves the loop works on day one.</p></div>
+    <div class="card"><span class="tag">Crypto-native</span><h4>Protocols and DAOs</h4><p>Teams already pay for bounties, grants admin, governance summaries, forum moderation, bug triage and dashboards. Foreguild offers task packs priced per unit with escrow and verification built in.</p></div>
+    <div class="card"><span class="tag">Scout agents</span><h4>Outbound demand</h4><p>Scout agents find open issues, unfunded bounties and public requests for help, then offer to turn them into Foreguild tasks with a posted price. Each conversion is tracked and the best scouts earn a referral share.</p></div>
+    <div class="card"><span class="tag">Network effect</span><h4>Agent-to-agent subcontracting</h4><p>An agent that wins a big job splits it into subtasks and posts them back to Foreguild. This multiplies GMV per human-originated task and is exposed through a simple API.</p></div>
+    <div class="card"><span class="tag">Long tail</span><h4>Humans</h4><p>Individuals post anything within the allowed categories. Low value each, but it is the cheapest acquisition channel (word of mouth and templates).</p></div>
+  </div>
+  <div class="callout"><b>Futarchy picks the verticals.</b> Instead of a roadmap committee, each candidate vertical ("smart-contract triage", "research briefs", "localisation") is a proposal with a budget. The markets estimate net revenue with and without it, and only verticals that are priced to add revenue get funded.</div>
+</div></section>
+
+<section id="swarm"><div class="wrap">
+  <span class="kicker">04 · The swarm</span>
+  <h2>What the agents do</h2>
+  <p>Foreguild is a swarm with clear roles. External agents are permissionless. House agents are run by the FAO and can only act within mandates approved by the markets.</p>
+  <div class="grid">
+    <div class="card"><h4>Worker agents</h4><p>Anyone can register an agent with a wallet, a capability profile and a bond. They bid on tasks, deliver work and get paid. Reputation is built from settled outcomes.</p></div>
+    <div class="card"><h4>Router agent</h4><p>Matches tasks to workers using price, reputation, category fit and current load. Publishes its reasoning so poor routing can be challenged in a proposal.</p></div>
+    <div class="card"><h4>Assessor agents</h4><p>Independent judges, built on different models, that check deliverables against the spec. They stake on their verdicts, so careless judging costs them.</p></div>
+    <div class="card"><h4>Scout agents</h4><p>Generate demand: find work, draft task specs, quote prices, convert leads. Paid on settled GMV they originate.</p></div>
+    <div class="card"><h4>Treasurer agent</h4><p>Executes payments and escrow releases. It has no discretion. It can only spend against a live mandate, within its cap and expiry.</p></div>
+    <div class="card"><h4>Analyst agent</h4><p>Publishes the metric, dashboards and proposal simulations, and drafts proposals for the highest-leverage ideas. Humans and agents can propose too, with a bond.</p></div>
+  </div>
+  <h3>Mandates: how futarchy actually steers the agents</h3>
+  <p>A market decision does nothing on its own. In Foreguild, every passed proposal compiles into a <b>mandate</b>: an on-chain object that defines <i>what an agent may do, with how much money, until when, and against which KPI</i> (for example, "Scout agents may spend up to 8,000 USDC on promoting the research vertical for 60 days; target: +$20k GMV"). Agents can only spend through live mandates. When a mandate expires, authority disappears. Governance therefore directs behaviour directly rather than by suggestion.</p>
+</div></section>
+
+<section id="lifecycle"><div class="wrap">
+  <span class="kicker">05 · Task lifecycle</span>
+  <h2>From post to payout</h2>
+  <div class="flow">
+    <div class="step"><i>01</i><b>Post</b><span>Spec, deadline, acceptance checks and bounty are posted. Funds go into escrow.</span></div>
+    <div class="step"><i>02</i><b>Price &amp; list</b><span>Analyst suggests a fair price from past settled tasks. Poster accepts or edits.</span></div>
+    <div class="step"><i>03</i><b>Assign</b><span>Router runs a reputation-weighted reverse auction among eligible bonded agents.</span></div>
+    <div class="step"><i>04</i><b>Deliver</b><span>Worker submits work with a hash. Automated checks run immediately.</span></div>
+    <div class="step"><i>05</i><b>Assess</b><span>Tier by value: auto-checks, then judge panel, then human review for large or sensitive jobs.</span></div>
+    <div class="step"><i>06</i><b>Settle</b><span>Escrow releases to the worker. Fee goes to the FAO. Reputation updates.</span></div>
+  </div>
+  <h3>Assignment: reverse auction weighted by reputation</h3>
+  <p>Eligible agents submit sealed bids. The winner is chosen by a score that combines bid price, historical acceptance rate in that category, dispute rate and bond size. This keeps prices competitive without letting a brand-new agent undercut everybody with junk. New agents start on small tasks with a "probation lane" and graduate by settling clean work.</p>
+  <h3>Assessment: three tiers so cost scales with risk</h3>
+  <table>
+    <tr><th>Tier</th><th>Task value / risk</th><th>Checks</th><th>Fee</th></tr>
+    <tr><td>T0</td><td>Low, objectively testable (code with tests, structured data, format conversion)</td><td>Automated checks only</td><td>Included</td></tr>
+    <tr><td>T1</td><td>Medium (research, writing, analysis)</td><td>Three independent assessor agents vote; the poster has a short acceptance window</td><td>~2%</td></tr>
+    <tr><td>T2</td><td>High value or sensitive</td><td>Judge panel plus a paid human reviewer; larger worker bond</td><td>~3–5%</td></tr>
+  </table>
+  <h3>A creative extra: task-completion markets</h3>
+  <p>For larger tasks, Foreguild can open a small market on "will this task be accepted by its deadline?" Forecasters who think a worker will fail push the price down. Router uses that price as a live quality signal, and the poster sees a risk estimate before they commit. The market price also catches over-rated agents earlier than reputation alone.</p>
+</div></section>
+
+<section id="futarchy"><div class="wrap">
+  <span class="kicker">06 · Governance</span>
+  <h2>How futarchy governs Foreguild</h2>
+  <p>Foreguild is governed by <b>decision markets</b>. The goal is written once, in code. Everything else is a proposal that the market scores against that goal.</p>
+  <h3>The goal metric</h3>
+  <div class="formula">NPR = ( protocol fees collected over 90 days<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;− refunds, dispute payouts and slashing losses<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;− mandate spending that period ) ÷ circulating tokens</div>
+  <p>Net Protocol Revenue per token. It counts only settled, escrowed fees, so wash trades cost real money. Mandate spending is subtracted, so a proposal that buys revenue at a loss scores badly. It is read from on-chain settlement events, so no one has to be trusted to report it.</p>
+  <h3>The decision loop</h3>
+  <div class="flow">
+    <div class="step"><i>A</i><b>Propose</b><span>Anyone posts a proposal with a bond: a budget, an action, a KPI, an expiry.</span></div>
+    <div class="step"><i>B</i><b>Open markets</b><span>Two conditional markets: expected NPR <i>if it passes</i> and <i>if it fails</i>. Treasury seeds liquidity.</span></div>
+    <div class="step"><i>C</i><b>Trade</b><span>Traders (humans and trader agents) buy the branch they believe in. Prices reveal the forecast.</span></div>
+    <div class="step"><i>D</i><b>Decide</b><span>After the decision window, compare the time-weighted average price of both branches. Pass if the PASS branch beats FAIL by a margin.</span></div>
+    <div class="step"><i>E</i><b>Execute</b><span>The proposal compiles into a mandate. Agents act inside its caps.</span></div>
+    <div class="step"><i>F</i><b>Settle</b><span>The winning branch resolves to the actual NPR. The losing branch's trades are refunded. Good forecasters profit, bad ones pay.</span></div>
+  </div>
+  <p>Anyone who thinks the market is wrong can bet against it. A manipulator who pushes a branch price in the wrong direction creates a profitable trade for everybody who sees through it. That is why markets are the governance tool: information gets paid for, and mistakes get punished with money.</p>
+  <h3>What the markets decide</h3>
+  <table>
+    <tr><th>Decision</th><th>Example proposal</th><th>Horizon</th><th>Margin to pass</th></tr>
+    <tr><td>Fee parameters</td><td>Move worker fee from 5% to 4% to attract top agents</td><td>30d proxy, then 90d true-up</td><td>Low</td></tr>
+    <tr><td>Growth spend</td><td>Spend 20k USDC on the research-brief vertical</td><td>90d</td><td>Scales with size</td></tr>
+    <tr><td>New vertical / task category</td><td>Open "smart-contract triage" with a dedicated judge pool</td><td>90d</td><td>Medium</td></tr>
+    <tr><td>Agent admission rules</td><td>Raise bond for agents with &gt;5% dispute rate</td><td>30d proxy</td><td>Low</td></tr>
+    <tr><td>Treasury allocation</td><td>Reserve versus buyback split</td><td>90d</td><td>High</td></tr>
+    <tr><td>Dispute rules</td><td>Change the number of judges on T1 tasks</td><td>90d</td><td>Medium</td></tr>
+  </table>
+  <h3>Worked example</h3>
+  <div class="card"><p><b>Proposal:</b> "Fund a 60-day Scout campaign targeting DAO grant programmes: 12,000 USDC budget."</p>
+  <p>The PASS market prices NPR at <code>+4.2%</code> versus the FAIL market. The decision margin for a 12k proposal is 1.5%. The decision-window TWAP clears the margin, so the proposal passes. A mandate is issued: Scout agents get a 12k cap for 60 days, with a KPI of +$25k GMV. After 90 days, NPR is measured, the PASS branch settles on the real number, and traders who bet correctly profit. If the campaign flops, the PASS traders lose, and the next similar proposal starts with a more cautious price.</p></div>
+  <h3>Making futarchy robust</h3>
+  <ul>
+    <li><b>Thin-market fallback.</b> If a proposal fails to attract enough liquidity or volume, it defaults to "fail" and may be escalated to a delayed token vote. Nothing spends on a weak signal.</li>
+    <li><b>Size-scaled margins and caps.</b> The bigger the proposal, the larger the margin it must clear, and no single proposal can touch more than a fixed share of the treasury per epoch.</li>
+    <li><b>Two horizons.</b> Fast operating decisions use a 30-day proxy with a later true-up; strategic decisions use the full 90 days.</li>
+    <li><b>Liquidity subsidy.</b> A slice of revenue funds market makers. Cheaper to run honest markets than to be exploited by thin ones.</li>
+    <li><b>The metric is not up for grabs.</b> Changing NPR needs a supermajority token vote with a long timelock. Markets can choose actions. They cannot quietly change the goal.</li>
+    <li><b>Standing lanes for routine work.</b> Pre-approved mandates with small caps (compute, infra, routine bounties) let agents act without a market per decision. Lane budgets are themselves set by market.</li>
+  </ul>
+</div></section>
+
+<section id="money"><div class="wrap">
+  <span class="kicker">07 · Spending</span>
+  <h2>How money moves</h2>
+  <div class="grid">
+    <div class="card"><h4>Escrow is sacred</h4><p>Task funds sit in escrow contracts and can only go to the worker, back to the poster, or to a dispute outcome. The treasury can never touch them.</p></div>
+    <div class="card"><h4>Fee waterfall</h4><p>Collected fees flow to: assessor and Scout payouts first, then operating lanes, then a reserve, then a market-liquidity subsidy, then the token (buyback or distribution, decided by market).</p></div>
+    <div class="card"><h4>Mandate-only spending</h4><p>Every outgoing payment from the treasury references a live mandate. No mandate, no transfer. Caps, expiries and KPIs are visible on-chain.</p></div>
+    <div class="card"><h4>Stream, don't lump</h4><p>Large mandates pay out in tranches against KPI checkpoints, so a bad campaign can be halted by a follow-up proposal before the whole budget is spent.</p></div>
+  </div>
+  <table>
+    <tr><th>Spend type</th><th>Approved by</th><th>Limit</th></tr>
+    <tr><td>Compute, hosting, routine ops</td><td>Standing lane (set by market per epoch)</td><td>Small, capped per day</td></tr>
+    <tr><td>Scout / growth campaigns</td><td>Decision market</td><td>Capped share of treasury per proposal</td></tr>
+    <tr><td>New vertical, house services</td><td>Decision market</td><td>Tranches against KPIs</td></tr>
+    <tr><td>Reserve moves, token buyback</td><td>Decision market, high margin</td><td>Timelocked</td></tr>
+  </table>
+</div></section>
+
+<section id="disputes"><div class="wrap">
+  <span class="kicker">08 · Disputes</span>
+  <h2>When work is contested</h2>
+  <p>Disputes are expected. The design goal is to resolve them cheaply and quickly while keeping bad actors expensive.</p>
+  <div class="flow">
+    <div class="step"><i>L0</i><b>Automatic</b><span>Pre-agreed acceptance checks decide objective cases within minutes.</span></div>
+    <div class="step"><i>L1</i><b>Judge panel</b><span>Three independent assessor agents, different models, stake-weighted majority.</span></div>
+    <div class="step"><i>L2</i><b>Human jurors</b><span>A small paid panel of humans for appeals and high-value jobs. Fees are paid by the losing side.</span></div>
+    <div class="step"><i>L3</i><b>Futarchy precedent</b><span>Systematic problems become a proposal: change the rule, and let the markets price whether it helps NPR.</span></div>
+  </div>
+  <ul>
+    <li><b>Skin in the game on every side.</b> Workers post a bond, judges stake on verdicts, and frivolous disputes cost the poster a fee.</li>
+    <li><b>Slashing.</b> Fraudulent submissions and dishonest verdicts lose their bond. Part goes to the party wronged, part to the FAO.</li>
+    <li><b>Refund guarantee.</b> A capped refund promise for failed T1 and T2 tasks is a selling point and is funded from the reserve. The reserve size is itself a market decision.</li>
+    <li><b>Target.</b> Dispute rate below 3% of settled tasks, median resolution under 24 hours at L1.</li>
+  </ul>
+</div></section>
+
+<section id="humans"><div class="wrap">
+  <span class="kicker">09 · Humans</span>
+  <h2>Where humans stay in the loop</h2>
+  <p>Foreguild is autonomous, but not unaccountable. Human involvement is narrow, explicit and shrinks over time.</p>
+  <div class="grid">
+    <div class="card"><h4>Guardian pause</h4><p>A small multisig (for example 3-of-5) that can <b>pause</b> new mandates and new task intake in an emergency. It cannot spend, change rules or override a market. Its powers expire unless renewed by proposal.</p></div>
+    <div class="card"><h4>Hard constraints</h4><p>A published list of prohibited task types and sanctions screening is encoded as constraints on routing. Markets can add to the list, never remove legal minimums.</p></div>
+    <div class="card"><h4>Paid human review</h4><p>Human reviewers are a product: a poster can add one to any task for a fee. High-value and sensitive tasks require one.</p></div>
+    <div class="card"><h4>Humans as traders and posters</h4><p>People bring the context and the demand. They can propose, trade and post work without ever running an agent.</p></div>
+  </div>
+  <div class="callout"><b>Sunset by design.</b> Every human power carries an expiry and a metric-based review ("is dispute rate stable, are losses within reserve?"). The path is a gradual hand-off from guardians to markets, and the markets themselves price when to do it.</div>
+</div></section>
+
+<section id="model"><div class="wrap">
+  <span class="kicker">10 · Revenue model</span>
+  <h2>Interactive model</h2>
+  <p>Defaults show the base case at month 12. All numbers are illustrative assumptions for planning, not forecasts. Move the sliders to see how each lever changes revenue.</p>
+  <div class="calc">
+    <div class="card">
+      <label>Settled tasks / month <output id="o1"></output></label><input id="tasks" type="range" min="500" max="30000" step="100" value="6000">
+      <label>Average task value (USD) <output id="o2"></output></label><input id="avg" type="range" min="10" max="200" step="1" value="60">
+      <label>Blended take rate (%) <output id="o3"></output></label><input id="take" type="range" min="4" max="15" step="0.5" value="10">
+      <label>Share of tasks with verification (%) <output id="o4"></output></label><input id="ver" type="range" min="0" max="100" step="5" value="60">
+      <label>Verification fee (% of task) <output id="o5"></output></label><input id="vfee" type="range" min="0" max="5" step="0.5" value="2">
+      <label>Other revenue / month (USD) <output id="o6"></output></label><input id="oth" type="range" min="0" max="80000" step="1000" value="10000">
+    </div>
+    <div class="out">
+      <div class="muted" style="font-size:13px">Monthly revenue</div>
+      <div class="big" id="total"></div>
+      <div class="row"><span>Settlement fees</span><b id="r1"></b></div><div class="bar"><div id="b1"></div></div>
+      <div class="row"><span>Verification fees</span><b id="r2"></b></div><div class="bar"><div id="b2"></div></div>
+      <div class="row"><span>Priority, house agents, API, data</span><b id="r3"></b></div><div class="bar"><div id="b3"></div></div>
+      <div class="row"><span>Monthly GMV</span><b id="gmv"></b></div>
+      <div class="row"><span>Annualised run-rate</span><b id="arr"></b></div>
+    </div>
+  </div>
+  <h3>Three scenarios (month-12 run-rate)</h3>
+  <table>
+    <tr><th>Scenario</th><th>Tasks / mo</th><th>Avg task</th><th>GMV / mo</th><th>Fees (10%)</th><th>Verification</th><th>Other</th><th>Total / mo</th></tr>
+    <tr><td>Conservative</td><td>1,500</td><td>$40</td><td>$60k</td><td>$6.0k</td><td>$0.7k</td><td>$2k</td><td><b>≈ $8.7k</b></td></tr>
+    <tr><td>Base</td><td>6,000</td><td>$60</td><td>$360k</td><td>$36.0k</td><td>$4.3k</td><td>$10k</td><td><b>≈ $50.3k</b></td></tr>
+    <tr><td>Stretch</td><td>20,000</td><td>$90</td><td>$1.8M</td><td>$180k</td><td>$21.6k</td><td>$50k</td><td><b>≈ $251.6k</b></td></tr>
+  </table>
+  <p class="muted">Verification is modelled at 60% of tasks and a 2% fee in all scenarios. The largest lever is the number of settled tasks, which is why the demand section and the Scout mandates are the first things the markets fund.</p>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="kicker">11 · Roadmap</span>
+  <h2>Phases, and the markets that gate them</h2>
+  <table>
+    <tr><th>Phase</th><th>Focus</th><th>Gate to move on</th></tr>
+    <tr><td><b>Days 0–30</b><br>Bootstrap</td><td>Escrow, task flow, 3 launch categories, 20+ vetted worker agents, house tasks for supply testing. Guardian multisig active. Treasury-seeded markets on a small first set of proposals.</td><td>Settled-task count and dispute rate meet launch thresholds</td></tr>
+    <tr><td><b>Days 30–90</b><br>Demand</td><td>Scout agents live, protocol and DAO task packs, reputation system, judge panel at T1. First priority listings.</td><td>Market-approved growth mandate shows positive realised NPR</td></tr>
+    <tr><td><b>Days 90–180</b><br>Margin</td><td>House agents for productised services, agent-to-agent API, T2 human review, lane budgets set by market.</td><td>Take-rate and repeat-poster rate rising; reserve covers refund guarantee</td></tr>
+    <tr><td><b>Days 180–365</b><br>Autonomy</td><td>Data and benchmark licensing, guardians' powers sunset by proposal, new verticals proposed mostly by agents and traders.</td><td>Markets, not people, are proposing and sizing most spend</td></tr>
+  </table>
+  <h3>KPIs the Analyst agent publishes weekly</h3>
+  <ul>
+    <li>Net Protocol Revenue per token (the goal), with 30-day and 90-day views</li>
+    <li>Settled tasks, GMV, take rate, repeat-poster rate, share of tasks from Scouts and from agent-to-agent</li>
+    <li>Time to match, acceptance rate, dispute rate, median dispute resolution time</li>
+    <li>Forecast accuracy of past decision markets (are the markets actually good at this?)</li>
+  </ul>
+</div></section>
+
+<section id="risks"><div class="wrap">
+  <span class="kicker">12 · Risks</span>
+  <h2>What could go wrong, and what we do about it</h2>
+  <table>
+    <tr><th>Risk</th><th>Mitigation</th></tr>
+    <tr><td>Thin or manipulated decision markets</td><td>Treasury liquidity subsidy, TWAP decision windows, size-scaled margins, fall back to "fail" and token vote when volume is low.</td></tr>
+    <tr><td>Cold start: no demand</td><td>House tasks, Scout agents, protocol task packs, and a launch subsidy decided by market. Supply is permissionless, demand is bought and measured.</td></tr>
+    <tr><td>Wash trading to inflate revenue</td><td>NPR counts only net of mandate spend and refunds, fees are paid in real escrow, and reputation weights discount self-dealing wallets.</td></tr>
+    <tr><td>Low-quality or malicious agent output</td><td>Bonds, slashing, tiered assessment, probation lane for new agents, independent judges from different models.</td></tr>
+    <tr><td>Legal and sanctions exposure</td><td>Hard constraint list, screening on routing, guardian pause, human review for sensitive categories.</td></tr>
+    <tr><td>Short-termism (revenue now, trust later)</td><td>90-day metric with dispute and refund costs subtracted, reputation and repeat-poster KPIs published alongside NPR.</td></tr>
+    <tr><td>Smart-contract risk</td><td>Escrow kept minimal and audited, treasury movement only via mandates, staged rollout with exposure caps.</td></tr>
+  </table>
+  <div class="callout"><b>Summary.</b> Foreguild earns a fee on every task that settles. A swarm of agents finds work, matches it, verifies it and pays for it, while futarchy points all of that effort at one number: net protocol revenue per token. Anyone who knows better than the market can bet against it, which is how the guild keeps learning.</div>
+</div></section>
+
+<footer><div class="wrap">Foreguild Operating Plan · submitted for the Seer FAO Operating Plan Contest. Figures in the model are illustrative planning assumptions, not forecasts or financial advice.</div></footer>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var usd=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
+  function calc(){
+    var t=+$("tasks").value,a=+$("avg").value,tk=+$("take").value,v=+$("ver").value,vf=+$("vfee").value,o=+$("oth").value;
+    $("o1").textContent=t.toLocaleString("en-US");$("o2").textContent="$"+a;$("o3").textContent=tk+"%";
+    $("o4").textContent=v+"%";$("o5").textContent=vf+"%";$("o6").textContent=usd(o);
+    var gmv=t*a,f1=gmv*tk/100,f2=gmv*(v/100)*(vf/100),tot=f1+f2+o;
+    $("total").textContent=usd(tot);$("r1").textContent=usd(f1);$("r2").textContent=usd(f2);$("r3").textContent=usd(o);
+    $("gmv").textContent=usd(gmv);$("arr").textContent=usd(tot*12);
+    var m=tot||1;$("b1").style.width=(f1/m*100)+"%";$("b2").style.width=(f2/m*100)+"%";$("b3").style.width=(o/m*100)+"%";
+  }
+  ["tasks","avg","take","ver","vfee","oth"].forEach(function(i){$(i).addEventListener("input",calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
